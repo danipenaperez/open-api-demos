@@ -1,30 +1,8 @@
 
 # Consideraciones
 
-HAY QUE TENER EN CUENTA
-swagger, es la version 2, se genera con swagger-codegen-cli y genera (al menos en el cliente)  anotaciones @javax.annotation.Generated que solo son compatibles con java 8 y 10, en la 11 se depreca, conlo cual si luego vas a usar java 11 no te va a funcionar y tienes que meter la dependencia a mano en la libreria, cosa que pierde la magia 
-
-    <dependency>
-      <groupId>javax.annotation</groupId>
-      <artifactId>javax.annotation-api</artifactId>
-      <version>${javax-annotation-api.version}</version>
-    </dependency>
-
-Por eso lo mejor es usar la imagen docker que siempre estara actualizada a la ultima version
-https://hub.docker.com/r/swaggerapi/swagger-codegen-cli
-
-
-Es mas si vas al codigo generado en https://editor.swagger.io/ y pulsas en genrate Server > java vemos que el codigo descargao del zip tampoco compila con java 11
-Pero si luego el codigo generado no vale 
-
-
-
-Buen enlace https://gist.github.com/thomasdarimont/d136b027c37efa02e627a4bd19adb76d
-
-Para convertir swagger to openapi 
-https://mermade.org.uk/openapi-converter
-
-
+Las versiones de swagger y swagger code gen pierden compatibilidad con java 11 (ya que no existe @javax.annotation.Generated)
+Esta demo usa la imagen docker oficial de openapigenerator para la construccion de artefactos.
 
 # Proposito
 
