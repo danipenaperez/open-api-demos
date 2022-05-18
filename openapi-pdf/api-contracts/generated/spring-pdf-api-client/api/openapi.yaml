@@ -1,0 +1,75 @@
+openapi: 3.0.0
+info:
+  description: Products PDF Generator
+  title: Quickstart service Demo
+  version: 1.1.3
+servers:
+- url: /
+tags:
+- description: Products PDF
+  name: pdf
+paths:
+  /download-pdf:
+    get:
+      description: This method download a pdf
+      operationId: downloadPDF
+      responses:
+        "200":
+          content:
+            application/pdf:
+              schema:
+                format: byte
+                type: string
+          description: successful operation
+        "400":
+          content:
+            application/pdf:
+              schema:
+                $ref: '#/components/schemas/ErrorResourceResponse'
+          description: Bad Request
+        "401":
+          content:
+            application/pdf:
+              schema:
+                $ref: '#/components/schemas/ErrorResourceResponse'
+          description: Unauthorized
+        "403":
+          content:
+            application/pdf:
+              schema:
+                $ref: '#/components/schemas/ErrorResourceResponse'
+          description: Forbidden
+        "404":
+          content:
+            application/pdf:
+              schema:
+                $ref: '#/components/schemas/ErrorResourceResponse'
+          description: Not Found
+        "500":
+          content:
+            application/pdf:
+              schema:
+                $ref: '#/components/schemas/ErrorResourceResponse'
+          description: Internal Server Error
+      summary: Method to retrieve one pdf
+      x-accepts: application/pdf
+components:
+  schemas:
+    ErrorResource:
+      properties:
+        code:
+          type: string
+        description:
+          type: string
+        details:
+          items:
+            type: string
+          type: array
+      title: ErrorResource
+      type: object
+    ErrorResourceResponse:
+      properties:
+        error:
+          $ref: '#/components/schemas/ErrorResource'
+      type: object
+

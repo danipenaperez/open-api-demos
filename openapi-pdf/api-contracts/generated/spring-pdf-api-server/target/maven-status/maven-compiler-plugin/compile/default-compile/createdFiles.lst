@@ -1,0 +1,4 @@
+com/dppware/demo/server/model/ErrorResource.class
+com/dppware/demo/server/model/ErrorResourceResponse.class
+com/dppware/demo/server/api/DownloadPdfApi.class
+com/dppware/demo/server/api/ApiUtil.class
