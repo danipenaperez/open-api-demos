@@ -1,7 +1,7 @@
 # open-api-demos
 Some Open API Generation project examples
 
-PDF OpenAPI v3- server client example  (./openapi-pdf)
+[PDF Endpoint server/client Springboot demo]  (./openapi-pdf)
 
 
 ## Utilidades online
